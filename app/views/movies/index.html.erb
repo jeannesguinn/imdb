@@ -1,0 +1,30 @@
+
+
+<!-- This will make our h1 tag dynamic and change based on what def action we're in. -->
+<h1><%= params[:action] == 'index' ? 'Movie' : params[:action].titleize %></h1>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Thumbnail</th>
+      <th>Summary</th>
+      <th>Trailer</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @movies.each do |movie| %>
+    <tr>
+      <td><%= link_to movie.title, movie %></td>
+      <td><img src="<%= movie.thumbnail%>" alt=""></td>
+      <td><%= movie.summary %></td>
+      <td><img src="<%=movie.youtube_embedded_link.html_safe%>"></td>
+      <td>
+        <%=link_to 'Edit', edit_movie_path(movie)%> | <%=link_to 'Delete', movie, method: :delete%>
+      </td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>

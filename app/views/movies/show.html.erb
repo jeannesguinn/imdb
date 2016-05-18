@@ -1,0 +1,11 @@
+
+<h2><%= @movie.title %></h2>
+
+
+<h3><%= @movie.summary %></h3>
+
+<p><img src="<%=@movie.thumbnail%>" alt=""></p>
+
+<p><img src="<%=@movie.youtube_embedded_link.html_safe%>"</p>
+
+<%= link_to 'Back', movies_path %>

@@ -1,0 +1,36 @@
+<%= form_for @movie do |f| %>
+
+  <% if @movie.errors.any? %>
+    <div class= "alert">
+      <h2>You have errors</h2>
+      <ul>
+        <% @movie.errors.full_messages.each do |message|%>
+          <li><%= message %></li>
+        <%end%>
+      </ul>
+    </div>
+  <%end%>
+
+
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :summary %>
+    <%= f.text_field :summary %>
+  </p>
+  <p>
+    <%= f.label :youtube_embedded_link %>
+    <%= f.text_field :youtube_embedded_link %>
+  </p>
+
+  <p>
+    <%= f.label :thumbnail %>
+    <%= f.text_field :thumbnail %>
+  </p>
+
+
+  <%= f.submit %> or <%= link_to 'Cancel', movies_path %>
+
+<% end %>
