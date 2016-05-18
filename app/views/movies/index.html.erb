@@ -18,9 +18,9 @@
     <% @movies.each do |movie| %>
     <tr>
       <td><%= link_to movie.title, movie %></td>
-      <td><img src="<%= movie.thumbnail%>" alt=""></td>
+      <td><img src="<%= movie.thumbnail%>"</td>
       <td><%= movie.summary %></td>
-      <td><img src="<%=movie.youtube_embedded_link.html_safe%>"></td>
+      <td><%=movie.youtube_embedded_link.html_safe%></td>
       <td>
         <%=link_to 'Edit', edit_movie_path(movie)%> | <%=link_to 'Delete', movie, method: :delete%>
       </td>
