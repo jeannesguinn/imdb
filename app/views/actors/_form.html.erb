@@ -1,0 +1,31 @@
+<%= form_for @actor do |f| %>
+
+  <% if @actor.errors.any? %>
+    <div class= "alert">
+      <h2>You have errors</h2>
+      <ul>
+        <% @actor.errors.full_messages.each do |message|%>
+          <li><%= message %></li>
+        <%end%>
+      </ul>
+    </div>
+  <%end%>
+
+
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :year_of_birth %>
+    <%= f.date_field :year_of_birth %>
+  </p>
+  <p>
+    <%= f.label :thumbnail %>
+    <%= f.text_field :thumbnail %>
+  </p>
+
+
+  <%= f.submit %> or <%= link_to 'Cancel', actors_path %>
+
+<% end %>

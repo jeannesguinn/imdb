@@ -1,0 +1,26 @@
+<!-- This will make our h1 tag dynamic and change based on what def action we're in. -->
+<h1><%= params[:action] == 'index' ? 'Actor' : params[:action].titleize %></h1>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date of Birth</th>
+      <th>Photo</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @actors.each do |actor| %>
+    <tr>
+      <td><%= link_to actor.name, actor %></td>
+      <td><%= actor.year_of_birth %></td>
+      <td><img src="<%= actor.thumbnail%>"</td>
+      <td>
+        <%=link_to 'Edit', edit_actor_path(actor)%> | <%=link_to 'Delete', actor, method: :delete%>
+      </td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
