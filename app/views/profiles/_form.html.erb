@@ -1,0 +1,9 @@
+
+<%= form_for @profile, url: profile_path do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+
+  <%= f.submit %>
+<% end %>
