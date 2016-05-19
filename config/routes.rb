@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :movies, :actors
 
   namespace :api do
-    resources :actors, only: [:index],defaults: { :format => 'json' }
-    resources :movies, only: [:index],defaults: { :format => 'json' }
+    resources :actors, only: [:index, :show],defaults: { :format => 'json' }
+    resources :movies, only: [:index, :show],defaults: { :format => 'json' }
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
