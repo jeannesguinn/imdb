@@ -8,8 +8,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div>
   <div id="ovalHor"><p id="newActor"><%= link_to 'Create Movie', new_movie_path%></p></div>
-  <p><%= link_to 'Create Actor', new_actor_path%></p>
+  <div id="ovalHor"><p><%= link_to 'Create Actor', new_actor_path%></p></div>
+</div>
+
+  <p>
+    <%= form_tag(movies_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Movies" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+  </p>
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
