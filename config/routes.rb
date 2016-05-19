@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   resource :profile, except: [:destroy]
   resources :movies, :actors
+
+  namespace :api do
+    resources :actors, only: [:index],defaults: { :format => 'json' }
+    # resources :movies, only: [:index]
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
