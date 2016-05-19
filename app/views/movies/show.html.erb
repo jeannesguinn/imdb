@@ -8,4 +8,9 @@
 
 <p><%=@movie.youtube_embedded_link.html_safe%></p>
 
+<h4>Actors:</h4>
+<% @movie.actors.each do |actor|%>
+  <p><%=link_to actor.name, actor_path(actor) %></p>
+<% end %>
+
 <%= link_to 'Back', movies_path %>

@@ -30,6 +30,12 @@
     <%= f.text_field :thumbnail %>
   </p>
 
+  <br>
+ <% Actor.all.each do |actor| %>
+  <%= check_box_tag 'movie[actor_ids][]', actor.id %> <%= actor.name %>
+  <br>
+<%end%>
+
 
   <%= f.submit %> or <%= link_to 'Cancel', movies_path %>
 

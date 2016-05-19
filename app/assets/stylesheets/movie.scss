@@ -1,3 +1,24 @@
 // Place all the styles related to the movie controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$secondary-color: gray;
+$font-link-color: salmon;
+
+#ovalHor {
+            background-color: $secondary-color;
+            width: 180px;
+            height: 90px;
+            -moz-border-radius: 90px/45px;
+            -webkit-border-radius: 90px/45px;
+            border-radius: 90px/45px;
+
+            a{          font-size: 24px;
+                        color:$font-link-color;
+                        position: relative;
+                        top: 30px;
+                        left: 20px;
+
+
+            }
+
+}
